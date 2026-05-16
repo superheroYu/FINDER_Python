@@ -1,0 +1,65 @@
+{
+  "comment": "Critical Node with Cost (CN_cost) - 关键节点代价问题配置",
+  "variant": "cn_cost",
+  "device": "cuda",
+  "base_dir": "./experiments",
+  "experiment_name": "cn_cost_experiment",
+  
+  "network": {
+    "min_nodes": 30,
+    "max_nodes": 50,
+    "graph_type": "small-world",
+    "training_type": "random",
+    "n_train_graphs": 1000,
+    "n_valid_graphs": 200
+  },
+  
+  "model": {
+    "embedding_size": 64,
+    "reg_hidden": 32,
+    "aux_dim": 4,
+    "max_bp_iter": 2,
+    "aggregator_id": 0,
+    "embedding_method": 1,
+    "initialization_stddev": 0.01
+  },
+  
+  "training": {
+    "gamma": 1.0,
+    "learning_rate": 0.0001,
+    "batch_size": 64,
+    "memory_size": 500000,
+    "n_step": 5,
+    "max_iterations": 1000000,
+    "update_target_freq": 1000,
+    "eval_freq": 300,
+    "save_freq": 300,
+    "graph_pool_update_freq": 5000,
+    "sampling_freq": 10,
+    "episodes_per_sampling": 10,
+    "eps_start": 1.0,
+    "eps_end": 0.05,
+    "eps_decay_steps": 10000.0,
+    "alpha": 0.001,
+    "is_huber_loss": false,
+    "is_double_dqn": false,
+    "is_dueling_dqn": false,
+    "is_prioritized_sampling": false,
+    "is_multi_step_dqn": true,
+    "priority_epsilon": 1e-7,
+    "priority_alpha": 0.6,
+    "priority_beta": 0.4,
+    "priority_beta_increment": 0.001,
+    "td_err_upper": 1.0,
+    "enable_training_eval": true,
+    "num_eval_episodes": 32,
+    "num_eval_envs": 8,
+    "eval_epsilon": 0.0
+  },
+  
+  "vector_env": {
+    "num_envs": 8,
+    "async_env": true,
+    "max_episode_steps": null
+  }
+}

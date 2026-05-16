@@ -1,0 +1,29 @@
+# FINDER Training Infrastructure Requirements
+
+# Core Dependencies
+numpy>=1.21.0
+torch>=2.0.0
+torch-geometric>=2.3.0
+gymnasium>=0.28.0
+networkx>=2.8.0
+
+# Monitoring and Logging
+tensorboard>=2.10.0
+matplotlib>=3.5.0
+seaborn>=0.11.0
+tqdm>=4.64.0
+psutil>=5.9.0
+
+# Data Processing
+scipy>=1.9.0
+pandas>=1.5.0
+
+# Development and Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+black>=22.0.0
+flake8>=5.0.0
+
+# Optional: For advanced features
+# pynvml>=11.0.0  # For GPU monitoring
+# wandb>=0.13.0   # For experiment tracking
